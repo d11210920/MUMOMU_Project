@@ -25,7 +25,7 @@ public class Part_timerRepository {
     public List<Part_timer> findAll () {return em.createQuery("select p from Part_timer p", Part_timer.class).getResultList();}
 
     public List<Part_timer> findByType(String hope_jopType){
-        return em.createQuery("select p from Part_timer p where p.hope_jopType = :hope_jopType",
+        return em.createQuery("select p from Part_timer p where p.hope_jobType = :hope_jopType",
                 Part_timer.class).setParameter("hope_jopType", hope_jopType).getResultList();
     }
 
