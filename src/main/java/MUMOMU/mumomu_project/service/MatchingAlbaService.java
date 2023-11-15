@@ -18,7 +18,7 @@ public class MatchingAlbaService {
     private final Part_timerRepository partTimerRepository;
     private final CompanyRepository companyRepository;
     @Transactional
-    public Long MatchingAlba(Long partTimerId, Long companyId){
+    public MatchingAlba MatchingAlba(Long partTimerId, Long companyId){
 
         Part_timer part_timer = partTimerRepository.findOne(partTimerId);
         Company company = companyRepository.findOne(companyId);
@@ -26,7 +26,7 @@ public class MatchingAlbaService {
         MatchingAlba matchingAlba = MatchingAlba.createMatchingAlba(company, part_timer);
 
         matchingAlbaRepository.save(matchingAlba);
-        return matchingAlba.getId();
+        return matchingAlba;
 
     }
 

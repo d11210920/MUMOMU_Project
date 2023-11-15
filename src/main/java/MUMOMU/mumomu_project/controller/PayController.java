@@ -25,15 +25,15 @@ public class PayController {
             throws IamportResponseException, IOException {
         return iamportClient.paymentByImpUid(imp_uid);
     }
-
     @Controller
     public class HomeController {
 
         @GetMapping("/")
-        public String home() {
+        public String home(){
             return "payment";
         }
     }
+
 
 
 }

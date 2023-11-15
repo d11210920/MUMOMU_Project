@@ -62,9 +62,6 @@ public class InitDb {
             part_timer3.setSexuality(Part_timer_sexuality.MALE);
             part_timer3.setAddress(new Address("인천","인하로","100","하이테크센터12층"));
 
-
-            MatchingAlba matchingAlba1 = MatchingAlba.createMatchingAlba(company,part_timer1);
-            em.persist(matchingAlba1);
             em.persist(part_timer2);
             em.persist(part_timer3);
         }

@@ -38,19 +38,12 @@ public class MatchingAlbaController {
     }
 
     @PostMapping(value="/matchingAlba/{partTimerId}/{companyId}")
-    public Map<String,Object> getMatchingAlbaForm(@PathVariable Long partTimerId, @PathVariable Long companyId){
+    public MatchingAlba getMatchingAlbaForm(@PathVariable Long partTimerId, @PathVariable Long companyId){
         Map<String, Object> response  = new HashMap<>();
 
-        List<Part_timer> partTimers = partTimerService.findPart_timers();
-        Company company = companyService.findOne(companyId);
+        MatchingAlba matchingAlba = matchingAlbaService.MatchingAlba(partTimerId, companyId);
 
-        response.put("partTimers",partTimers);
-        response.put("company",company);
-
-        return response;
-
-
+        return matchingAlba;
     }
     //결제
-
 }
